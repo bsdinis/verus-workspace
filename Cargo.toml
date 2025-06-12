@@ -1,0 +1,21 @@
+cargo-features = []
+
+[workspace]
+resolver = "3"
+members = ["lib-user", "lib"]
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.85"
+version = "0.0.1"
+
+[workspace.dependencies]
+# verus
+vstd = { git = "https://github.com/verus-lang/verus", branch = "main" }
+builtin = { git = "https://github.com/verus-lang/verus", branch = "main" }
+builtin_macros = { git = "https://github.com/verus-lang/verus", branch = "main" }
+
+lib = { path = "lib" }
+
+[workspace.lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(verus_keep_ghost)'] }

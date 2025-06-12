@@ -1,0 +1,19 @@
+[package]
+name = "lib"
+description = "some library"
+
+edition = { workspace = true }
+rust-version = { workspace = true }
+version = { workspace = true }
+
+[dependencies]
+# verus
+vstd = { workspace = true }
+builtin = { workspace = true }
+builtin_macros = { workspace = true }
+
+[lints]
+workspace = true
+
+[package.metadata.verus]
+verify = true
