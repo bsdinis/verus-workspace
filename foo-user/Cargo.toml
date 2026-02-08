@@ -1,6 +1,6 @@
 [package]
-name = "lib"
-description = "some library"
+name = "foo-user"
+description = "thing that uses the foo library"
 
 edition = { workspace = true }
 rust-version = { workspace = true }
@@ -9,8 +9,10 @@ version = { workspace = true }
 [dependencies]
 # verus
 vstd = { workspace = true }
-builtin = { workspace = true }
-builtin_macros = { workspace = true }
+verus_builtin = { workspace = true }
+verus_builtin_macros = { workspace = true }
+# foo
+foo = { workspace = true }
 
 [lints]
 workspace = true
